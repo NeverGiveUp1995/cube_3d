@@ -1,0 +1,80 @@
+
+#wrap {
+    width: 700px;
+    height: 700px;
+    border: 1px solid #999999;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    /*为元素设置景深，使得元素有近大远小的效果*/
+    perspective: 600px;
+    transform-style: preserve-3d;
+}
+
+#box {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform-style: preserve-3d;
+    transform-origin: center center -150px;
+    transition: 3s;
+}
+
+#wrap #box div {
+    width: 300px;
+    height: 300px;
+    background: rgb(49, 149, 124);
+    text-align: center;
+    line-height: 300px;
+    font-size: 35px;
+    color: white;
+    position: absolute;
+    opacity: .8;
+}
+
+/*顶面*/
+#wrap #box #top {
+    top: -300px;
+    transform-origin: bottom;
+    transform: rotateX(90deg);
+}
+
+#wrap #box #bottom {
+    bottom: -300px;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+}
+
+#wrap #box #left {
+    left: -300px;
+    transform-origin: right;
+    transform: rotateY(-90deg);
+}
+
+#wrap #box #right {
+    right: -300px;
+    transform-origin: left;
+    transform: rotateY(90deg);
+}
+
+#wrap #box #back {
+    transform: rotateX(180deg) translateZ(300px);
+}
+
+#wrap:hover #box {
+    transform: rotateX(360deg);
+}
+
+.clearfix, .clearfix:after, .clearfix:before {
+    display: table;
+    content: "";
+    clear: both;
+}

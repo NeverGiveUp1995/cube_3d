@@ -1,0 +1,82 @@
+#wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    width: 700px;
+    height: 700px;
+    border: 1px solid black;
+    /*构建景深*/
+    perspective: 600px;
+    transform-style: preserve-3d;
+
+}
+
+#wrap:hover #box {
+    transform: rotateX(380deg) rotateY(380deg);
+}
+
+#wrap #box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    /*构建3d舞台层级*/
+    transform-style: preserve-3d;
+    transform-origin: center center -150px;
+    transform: rotateX(-20deg) rotateY(-20deg);
+    /*transform: rotateY(45deg);*/
+    transition: 5s;
+}
+
+#wrap #box > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    background: rgb(49, 149, 124);
+    color: white;
+    text-align: center;
+    font: bold 50px/300px '微软雅黑';
+    opacity: .6;
+    /*改变基点位置*/
+    transform-origin: center center -150px;
+}
+
+#wrap #box > #top {
+    transform: rotateX(90deg);
+    background: burlywood;
+}
+
+#wrap #box > #left {
+    transform: rotateY(-90deg);
+    background: darkmagenta;
+}
+
+#wrap #box > #right {
+    transform: rotateY(90deg);
+    background: orangered;
+}
+
+#wrap #box > #bottom {
+    transform: rotateX(-90deg);
+    background: hotpink;
+}
+
+#wrap #box > #back {
+    transform: rotateY(-180deg);
+    background: hotpink;
+}
+
+#wrap #box > #front {
+    background: dodgerblue;
+}
